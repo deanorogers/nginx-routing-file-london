@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  web:
+    networks:
+      my-net:
+        ipv4_address: 10.5.0.7
+    image: "deanorogers/nginx-router"
+    ports:
+      - "8080:8080"
+    container_name: router 
+    #environment:
+    #  - POSTGRES_CONTAINER_IP=postgres
+  service-a:
+    networks:
+      my-net:
+        ipv4_address: 10.5.0.5
+    image: "deanorogers/nginx-service-a"
+    ports: 
+      - 8081:8081
+    container_name: service-a
+  service-b:
+    networks:
+      my-net:
+        ipv4_address: 10.5.0.6
+    image: "deanorogers/nginx-service-b"
+    ports:
+      - 8082:8082
+    container_name: service-b
+
+networks:
+  my-net:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1

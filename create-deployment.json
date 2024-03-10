@@ -1,0 +1,12 @@
+{
+  "applicationName": "serviceacodedeployapp",
+  "deploymentGroupName": "serviceacodedeploygroup",
+  "revision": {
+    "revisionType": "s3",
+    "s3Location": {
+      "bucket": "nginx-service-a-bluegreen-bucket",
+      "key": "service-a-appspec.yaml",
+      "bundleType": "YAML"
+    }
+  }
+}

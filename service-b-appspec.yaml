@@ -1,0 +1,16 @@
+
+applicationName: 'servicebcodedeployapp'
+deploymentGroupName: 'servicebcodedeploygroup'
+revision:
+  revisionType: AppSpecContent
+  appSpecContent:
+    content: |
+      version: 0.0
+      Resources:
+        - TargetService:
+            Type: AWS::ECS::Service
+            Properties:
+              TaskDefinition: "arn:aws:ecs:eu-west-2:107404535822:task-definition/nginx-service-b:2"
+              LoadBalancerInfo:
+                ContainerName: "nginx-service-b-container"
+                ContainerPort: 8082
