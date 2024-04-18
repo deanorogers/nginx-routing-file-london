@@ -20,7 +20,7 @@ revision:
         - TargetService:
             Type: AWS::ECS::Service
             Properties:
-              TaskDefinition: "arn:aws:ecs:eu-west-2:107404535822:task-definition/nginx-service-a:2"
+              TaskDefinition: "arn:aws:ecs:eu-west-2:107404535822:task-definition/nginx-service-a:4"
               LoadBalancerInfo:
                 ContainerName: "nginx-service-a-container"
                 ContainerPort: 8081

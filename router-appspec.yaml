@@ -20,7 +20,7 @@ revision:
         - TargetService:
             Type: AWS::ECS::Service
             Properties:
-              TaskDefinition: "arn:aws:ecs:eu-west-2:107404535822:task-definition/nginx-router:3"
+              TaskDefinition: "arn:aws:ecs:eu-west-2:107404535822:task-definition/nginx-router:5"
               LoadBalancerInfo:
                 ContainerName: "nginx-router-container"
                 ContainerPort: 8080
